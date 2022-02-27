@@ -20,15 +20,19 @@ data:
 {{- $exposrTransport = append $exposrTransport "ssh" }}
 {{- end }}
   EXPOSR_LOG_LEVEL: "{{ .Values.exposr.logLevel }}"
-  EXPOSR_ALLOW_REGISTRATION: "{{ .Values.exposr.allowRegistration }}"
   EXPOSR_ADMIN_ENABLE: "true"
-  EXPOSR_ADMIN_PORT: "8081"
-{{- if .Values.exposr.adminApiKey }}
-  EXPOSR_ADMIN_API_KEY: "{{ .Values.exposr.adminApiKey }}"
-{{- end }}
-  EXPOSR_PORT: "8080"
+  EXPOSR_ADMIN_PORT: "9000"
+  EXPOSR_ALLOW_REGISTRATION: "{{ .Values.exposr.allowRegistration }}"
+  EXPOSR_API_PORT: "8080"
 {{- if .Values.exposr.apiUrl }}
   EXPOSR_API_URL: "{{ .Values.exposr.apiUrl }}"
+{{- end }}
+{{- if eq .Values.exposr.admin.enabled true }}
+  EXPOSR_ADMIN_API_ENABLE: "true"
+  EXPOSR_ADMIN_API_PORT: "8081"
+{{- if .Values.exposr.admin.apiKey }}
+  EXPOSR_ADMIN_API_KEY: "{{ .Values.exposr.admin.apiKey }}"
+{{- end }}
 {{- end }}
 {{- if .Values.exposr.redisUrl }}
   EXPOSR_REDIS_URL: "{{ .Values.exposr.redisUrl }}"
@@ -39,6 +43,7 @@ data:
 {{- if .Values.exposr.ingress.http.domain }}
   EXPOSR_INGRESS_HTTP_DOMAIN: "{{ .Values.exposr.ingress.http.domain }}"
 {{- end }}
+  EXPOSR_INGRESS_HTTP_PORT: "8080"
 {{- end }}
 {{- if eq .Values.exposr.ingress.sni.enabled true }}
   EXPOSR_INGRESS_SNI_PORT: "{{ .Values.exposr.ingress.sni.port }}"
