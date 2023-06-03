@@ -2,6 +2,26 @@ apiVersion: v1
 entries:
   exposr:
   - apiVersion: v2
+    appVersion: 0.9.1
+    created: "2023-06-03T09:00:41.480898025Z"
+    description: exposr tunnel server
+    digest: 979974d6297f5e17eafd31175ce51ef2ff711b6da57eaf06355fe7bc9e18667e
+    name: exposr
+    type: application
+    urls:
+    - https://github.com/exposr/helm-charts/releases/download/exposr-0.9.1/exposr-0.9.1.tgz
+    version: 0.9.1
+  - apiVersion: v2
+    appVersion: 0.9.0
+    created: "2023-05-28T19:11:45.629370241Z"
+    description: exposr tunnel server
+    digest: 4b0be465c005064e6c1ff8b5e90a9acd524c1819c9ef4ad1ce750239d24cabeb
+    name: exposr
+    type: application
+    urls:
+    - https://github.com/exposr/helm-charts/releases/download/exposr-0.9.0/exposr-0.9.0.tgz
+    version: 0.9.0
+  - apiVersion: v2
     appVersion: 0.8.1
     created: "2023-04-30T10:04:53.540921919Z"
     description: exposr tunnel server
@@ -201,4 +221,4 @@ entries:
     urls:
     - https://github.com/exposr/helm-charts/releases/download/exposr-0.1.0/exposr-0.1.0.tgz
     version: 0.1.0
-generated: "2023-04-30T10:04:53.54107302Z"
+generated: "2023-06-03T09:00:41.481115841Z"
